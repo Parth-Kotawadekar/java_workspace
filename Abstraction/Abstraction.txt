@@ -95,3 +95,74 @@ Example 1.
         |--------------------------------------------------------|
 --------------------------------------------------------------------------------------------------------
 
+ABSTRACT CLASSES :-
+    Java Abstract Class is a class that cannot be initiated by itself, it needs to be subclasses by another class to use it's properties
+
+    Examples
+----------------------------------------------------------------------------------------------------------------------------------------
+        1. Abstract class that has abstract method
+
+            abstract class Sunstar{
+                abstract void printInfo();
+            }
+            class Employee extends Sunstar{
+                void printInfo(){
+                    String name = "Parth";
+                    int age = 23;
+                    float salary = 1000.00;
+
+                    System.out.println(name);
+                    System.out.println(age);
+                    System.out.println(salary);
+                }
+            }
+            class Base{
+                public static void main(String a[]){
+                    Sunstar s = new Employee();
+                    a.printInfo();
+                }
+            }
+
+            |-------------|
+            |Output:      |
+            |    Parth    |
+            |    23       |
+            |    1000.00  |
+            |-------------|
+------------------------------------------------------------------------------------------------------------------------------------------
+        2. Abstract Class Having constructor, data member and methods
+            import java.io.*;
+ 
+            abstract class Subject {
+                Subject() { 
+                System.out.println("Learning Subject"); 
+                }
+            
+                abstract void syllabus();
+            
+                void Learn(){
+                    System.out.println("Preparing Right Now!");
+                }
+            }
+            
+            class IT extends Subject {
+            void syllabus(){
+                System.out.println("C , Java , C++");
+            }
+            }
+            
+            class GFG {
+                public static void main(String[] args) {
+                    Subject x=new IT();
+                
+                    x.syllabus();
+                    x.Learn();
+                }
+            }
+
+            |-------------------------|
+            | Output :                |
+            |    Learning Subject     |
+            |    C , Java , C++       |
+            |    Preparing Right Now! |
+            |-------------------------|
